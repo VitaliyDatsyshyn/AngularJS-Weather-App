@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+html {
+    height: 100%;
+    font-family: "Geneva", sans-serif;
+}
+
+img {
+    transition: width 4s ease-out;
+    float: left;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #000000;
+    color: #eeeeee;
+    text-align: right;
+    margin-right: 30px;
+}
+header h1 {
+    font-size: 2.3em;
+    margin-bottom: 5px;
+    margin-right: 100px;
+}
+header p {
+    margin-right: 100px;
+}
+
+/*@keyframes fader {*/
+    /*0% {background: url("img/1.jpg")}*/
+    /*33.3% {background: url("img/2.jpg")}*/
+    /*66.6% {background: url("img/3.jpg") }*/
+    /*100% {background: url("img/1.jpg") }*/
+/*}*/
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background: rebeccapurple;
+    animation: fader 30s cubic-bezier(.8, 0, 0, .8) infinite;
+}
+
+#weatherItem {
+    position: absolute;
+    background-color: #eeeeee;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border: solid silver 2px;
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+}
+
+#sort {
+    height: 100px;
+    border-bottom: solid lightgray 2px;
+    padding-top: 20px;
+}
+
+#sort form {
+    padding-top: 20px;
+}
+
+article {
+    padding-bottom: 5px;
+    padding-top: 10px;
+    border-bottom: solid lightgray 2px;
+}
+
+.col-1 {
+    display: inline-block;
+    width: 40%;
+    margin: 0 0 10px 0;
+}
+
+.col-1 h3 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-size: 22px;
+}
+
+.col-2 {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    text-align: right;
+}
+
+.col-2 .temperature {
+    font-size: 30px;
+}
+
+.btn1 {
+    text-decoration: none;
+    border-radius: 5px;
+    color: #000000;
+    padding: 3px;
+    cursor: pointer;
+}
+#visited:hover {
+    color: grey;
+}
+#wishVisit:hover {
+    color: purple;
+}
+#del:hover {
+    color: red;
+}
+.addCity {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 1.3em;
+    width: 20%;
+    height: auto;
+    background-color: #000000;
+    color: #eeeeee;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.addCity:hover {
+    background-color: #aaaaaa;
+    color: #000000;
+}
+
+#refreshToDefault {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 1.3em;
+    width: 50%;
+    height: auto;
+    background-color: #000000;
+    color: #eeeeee;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#refreshToDefault:hover {
+    background-color: #aaaaaa;
+    color: #000000;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.text {
+    font-size: 1.5em;
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+}
+.text:focus {
+    border: 2px solid #000000;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First AngularJS App</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-cookies.min.js"></script>
+<script src="scripts.js"></script>
+<header>
+    <h1>Weather APP</h1>
+    <p>Made by Vitaliy Datsyshyn</p>
+</header>
+<body ng-app="myApp" ng-controller="myCtrl" data-ng-init="constructorMyData()">
+    <img src="img/1.jpg" style="min-height: 100%" height="{{heigthBack()}}" width="100%"  id="img1">
+    <img src="img/2.jpg" style="min-height: 100%" height="{{heigthBack()}}" width="0" id="img2">
+    <img src="img/3.jpg" style="min-height: 100%" height="{{heigthBack()}}" width="0" id="img3">
+    <img src="img/4.jpg" style="min-height: 100%" height="{{heigthBack()}}" width="0" id="img4">
+    <img src="img/5.jpg" style="min-height: 100%" height="{{heigthBack()}}" width="0" id="img5">
+    <div id="weatherItem">
+        <div id="sort">
+            <h1>Weather in capitals of Europe</h1>
+            <form>
+                <span>Sort by:</span>
+                <label for="temp"> | Temperature </label><input  ng-click="orderByMe('temperature')" type="radio" id="temp" name="sortRadio" checked>
+                <label for="cityName"> | Name </label><input ng-click="orderByMe('cityName')" type="radio" id="cityName" name="sortRadio">
+                <label for="description"> | Weather condition </label><input ng-click="orderByMe('description')" type="radio" id="description" name="sortRadio">
+                <label for="statusOfPlace"> | Status of place </label><input ng-click="orderByMe('statusOfPlace')" type="radio" id="statusOfPlace" name="sortRadio"> |
+            </form>
+        </div>
+        <div ng-repeat="x in myData | orderBy:myOrderBy">
+            <article style="background-color: {{ x.backColor }}">
+                <div class="col-1" >
+                    <h3>{{ x.cityName }}</h3>
+                    <p class="info">{{ x.description }}</p>
+                </div>
+                <div class="col-2">
+                    <span class="temperature">{{ x.temperature }}°C</span><br>
+                    <span class="btn1" id="visited" ng-click="visitedFunc(x.cityName)" >Visited</span>  |
+                    <span class="btn1" id="wishVisit" ng-click="wishVisitFunc(x.cityName)">Want to visit</span> |
+                    <span class="btn1" id="del"  ng-click="del(x.cityName)">Delete</span>
+                </div>
+            </article>
+        </div>
+        <button class="addCity" ng-click="openModal()">Add city</button>
+        <button id="refreshToDefault" ng-click="myDefault()">Refresh all the data to default</button>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" ng-click="closeModal()">&times;</span>
+                <input class="text" type="text" placeholder="Enter the city" ng-model="addedCity"><br>
+                <button class="addCity" ng-click="addCityFunc(addedCity);">Add city</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

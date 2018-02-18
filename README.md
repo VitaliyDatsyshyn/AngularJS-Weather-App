@@ -1,0 +1,2 @@
+To work correctly, this application should be open through loсalhost. For example, I use IDE PHPStorm and http://localhost:63342/PROJECT_NAME/ is PhpStorm's own simple built-in web server in action. It is used if no Deployment entries are defined (or defined but non of them is marked as default for this project).
+When you use Open in Browser action IDE checks your deployment settings looking for base URL that will be used to open such file in a browser. If it finds no such entries then instead of opening this file using file:// protocol it uses its' own built-in web server.
